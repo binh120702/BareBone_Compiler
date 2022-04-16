@@ -1,0 +1,10 @@
+cleAr x0;
+incr x0;
+while x0 not 0 do;
+decr x0;
+end;
+clear x1;
+incr x1;
+copy x1 to x0 ;
+incr x1; 
+clear xopopop;
