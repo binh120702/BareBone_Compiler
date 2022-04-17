@@ -4,7 +4,7 @@ import lexer
 import parser
 import codegenner
 import coderunner
-
+import subprocess
 def compile(srcCode):
     try:
         tokenList, debugPosition = lexer.lexicalAnalyze(srcCode)
@@ -12,7 +12,7 @@ def compile(srcCode):
         asmSource = codegenner.codeGenerate(parseTree)
         coderunner.codeRun(asmSource)
     except SystemExit as error:
-        print(str(error))
+        subprocess.call(["echo", "-e", "\\033[1;31m" + str(error) + "\\033[0m"])
     print("-----------------------------done-------------------------------------")
 """
 if len(sys.argv) == 2:
