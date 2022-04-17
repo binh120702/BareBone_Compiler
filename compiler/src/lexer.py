@@ -28,8 +28,15 @@ def lexicalAnalyze(srcCode):
     lexeme = ""
     line = 1
     col = 0
+    inComment = False
     for character in srcCode:
         col += 1
+        if character == '#':
+            inComment = True
+        if character == '\n':
+            inComment = False
+        if inComment : 
+            continue
         if invalidCharacterDetect(character):
             sys.exit(Error.INVALID_CHARACTER(character, line, col))
         if character == ' '  or character == '\t' or character == '\n' or character == ';':

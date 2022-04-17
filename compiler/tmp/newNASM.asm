@@ -2,7 +2,7 @@ extern printf
 SECTION .data
 fmt: db "%s = %lld", 10, 0
 Label_id1 : dq 0
-Label_idOrigin1 : dq "X0"
+Label_idOrigin1 : dq "X1"
 SECTION .text
 global main 
  main: 
